@@ -1,1 +1,52 @@
+def a_plus_abs_b(a, b):
+    if b < 0:
+        f = sub   
+    else:
+        f = add
+    return f(a, b)
+"""python要比c灵活太多，f可以表示一个具体的函数，也可以只表示一种运算符"""
 
+
+def two_of_three(i, j, k):
+    return (i*i+j*j+k*k-max(i,j,k)*max(i,j,k))
+
+
+def largest_factor(n):
+    b=n-1
+    while b>0:
+      if n % b == 0:
+       return b
+      b-=1 
+
+
+def hailstone(n):
+    """Print the hailstone sequence starting at n and return its
+    length.
+
+    >>> a = hailstone(10)
+    10
+    5
+    16
+    8
+    4
+    2
+    1
+    >>> a
+    7
+    >>> b = hailstone(1)
+    1
+    >>> b
+    1
+    """
+    "*** YOUR CODE HERE ***"
+    count=0
+    while n!=1:
+        count += 1
+        print(n)
+        if n % 2 ==0:
+           n = n//2
+        else:
+           n = n*3+1
+    print(n)
+    return count+1
+"""这道题我看了好多人的答案，一直在不懂为什么要print(n),一直导致我输出的结果是不对的。。。后来又看了一下，第一行就是n捏。。最后那个print(n)应该是给当最后n=1时跳出循环，再打印一下。因为我是从0开始记的，在最后输出的时候就再+1
